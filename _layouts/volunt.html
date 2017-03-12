@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<nav>
+    <ul>
+        <li><a href="/volunteering/rus" style="color: #CCCCCC">RUŠ</a></li>
+        <li><a href="/volunteering/stu" style="color: #CCCCCC">STU</a></li>
+        <li><a href="/volunteering/slobodazvierat" style="color: #CCCCCC">Sloboda zvierat</a></li>
+    </ul>
+</nav>
+<div class="container">
+
+    {% if page.title != "Volunteering" %}
+        <h1>{{page.title}}</h1>
+        <iframe src="{{ page.map }}" width="400" height="300"></iframe>
+    {% endif %}
+
+    <div class="volunt-image-text" align="center">
+        <p>
+            {{page.descr}}
+        </p>
+
+        <img src="{{page.image_path}}" alt="{{page.image_alt}}" max-height="500px">
+
+        <p>
+            {{ content }}
+        </p>
+
+    </div>
+
+</div><!-- /.container -->
+</body>
+</html>

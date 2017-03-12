@@ -1,0 +1,23 @@
+---
+layout: volunt
+title: Rada ubytovaných študentov
+map: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.482251691301!2d17.06182404354891!3d48.1587860853099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8b8e3d7f04f9%3A0xeac3a41047e501a4!2zxaBEIE1sYWRvc8Wl!5e0!3m2!1ssk!2ssk!4v1489286762356
+descr: Member since 2013, head of board 2015/2016.
+image_path: /images/rus.jpg
+image_alt: RUS SD Mladost
+
+rusall: Rada ubytovaných studentov Študentského domova Mladosť
+rus: RUŠ ŠD Mladosť
+---
+
+{% for  event in site.volun_rus_events_collection %}
+<p>
+    <a href="{{ event.web }}" title="{{ event.title }}" style="font-size: x-large">{{ event.title }} {{ event.year }}</a>
+</p>
+{% endfor %}
+
+<br>
+
+<p>
+    Since 2013 I am member of {{page.rusall}} (shortcut is {{page.rus}} or just {{page.rusall | remove: "Študentského domova Mladosť" | capitalize_all | remove: " " }}=RUŠ). It consists of accomodated students of the dornitory, {{ page.rus | remove: "RUŠ " }}.
+</p>

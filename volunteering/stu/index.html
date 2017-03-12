@@ -1,0 +1,14 @@
+---
+layout: volunt
+title: Slovak University of Technology in Bratislava
+map: https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10646.803246585405!2d17.1177!3d48.154573!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8a82a6d1a682fa5!2sSlovensk%C3%A1+technick%C3%A1+univerzita+v+Bratislave!5e0!3m2!1ssk!2ssk!4v1489286649300
+descr: School activities for the university, where I study.
+image_path: /images/stu.jpg
+image_alt: Me on Vapac
+---
+
+{% for  event in site.volun_stu_events_collection %}
+<p>
+    <a href="{{ event.web }}" title="{{ event.title }}" style="font-size: x-large">{{ event.title }} {{ event.year }}</a>
+</p>
+{% endfor %}

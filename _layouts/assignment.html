@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<nav>
+    <ul class="assingment">
+        <li><a href="/webpublishing/assignment1" style="color: #CCCCCC">Assignment 1</a></li>
+        <li><a href="" style="color: #CCCCCC">Assignment 2</a></li>
+        <li><a href="" style="color: #CCCCCC">Assignment 3</a></li>
+    </ul>
+</nav>
+<div class="container">
+
+   <div align="left" style="font-size: large">
+       <p>
+           <b>{{ page.uni }}<br>
+           {{ page.uni_faculty }}<br>
+           {{ page.uni_faculty_address }}</b><br>
+           <br>
+           <b>Zadanie č.{{ page.s_num }}:</b> {{ page.sub_name }}<br>
+           <b>Riešiteľ:</b> {{ page.student }}<br>
+           <b>Vedúci cvičení:</b> {{ page.supervisor }}<br>
+           <br>
+           <b>{{ page.year }} {{ page.semester }}</b><br>
+       </p>
+   </div>
+
+    <div align="left">
+        <p>
+            {{ content }}
+        </p>
+    </div>
+
+</div><!-- /.container -->

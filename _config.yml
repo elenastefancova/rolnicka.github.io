@@ -1,3 +1,12 @@
 name: Elena Stefancova, FIIT STU
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+
+collections:
+  trips_collection:
+    output: true
+  volun_rus_events_collection:
+  volun_stu_events_collection:
+
+gems:
+  - jekyll-numbered-headings

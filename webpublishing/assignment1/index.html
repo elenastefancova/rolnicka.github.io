@@ -1,0 +1,133 @@
+---
+layout: assignment
+title: Assignment 1
+sub_name: Osobná webová prezentácia na GitHub pages
+s_num: 1
+
+student: Elena Štefancová, 3.Bc Informatika
+supervisor: Ing. Marián Šimko, PhD.
+
+uni: Slovenská technická univerzita v Bratislave
+uni_faculty: Fakulta informatiky a informačných technológií
+uni_faculty_address: Ilkovičova 3, 842 16 Bratislava 4
+
+course: Webové publikovanie
+
+year: 2016/2017
+semester: LS
+
+---
+
+<p>
+    Našou úlohou bolo vytvoriť webové sídlo o sebe, so zameraním na profesné a osobné záujmy. V rámci stránky mala byť vytvorená sekcia webové publikovanie. Využívanými technológimii majú byť Git, GitHub Pages, Jekyll a Markdown.
+    Kritériá:<br>
+    <li> sídlo musí obsahovať aspoň 5 podstránok, pri využití aspoň 3 rôznych rozložení (layout-ov)</li>
+    <li> aspoň 5 premenných</li>
+    <li> kolekcie alebo dátové súbory</li>
+    <li> aspoň 5 filtrov alebo tagov</li>
+    <li> aspoň 1 plugin (okrem pagination)</li>
+</p>
+
+<h2>Orientácia</h2>
+<p>
+    Stránka pozostáva z piatich hlavných častí. Domácej stránky, životopisu (CV), prehľadu dobrovoľníckej činnosti rozdelenej do troch sekcií (Volunteering), zoznamu navštívených krajín (Travelling) a dokumentácii k jednotlivým zadaniam na Webové publikovanie. Celkový počet podstránok, vrátane tých pre kolekcie, je okolo 15, bez kolekcií okolo 10.
+</p>
+<p>
+    <center><img src="/images/doc/overview.PNG" alt="home page" height="500px"></center>
+</p>
+<p>
+    Menu sa pritom nachádza v hornej časti stránky a v pätičke sa okrem kontaktu nachádza aj dátum poslednej aktualizácie. Web je vytvorený pomocou technológie Jekyll a GitHub Pages spolu s Markdown-onm.
+</p>
+
+<h2>Rozloženia</h2>
+<p>
+    Základným rozložením je <b>default</b>, ktoré okrem hlavičky, pätičky a navigácie stránky rieši aj vypisovanie nadpisov aktuálne otvorenej stránky pred jej obsahom. Využívajú ho cca 3 stránky.<br>
+</p>
+<p>
+    <b>Volunteering</b> rieši ďalšie menu pre svoje aktivity, potom zobrazí nadpis aktuálnej stránky, mapu sídla, ktorého sa stránka týka, stručný popis, ilustračný obrázok a zvyšok obsahu. Využívajú ho 4 stránky.<br>
+    <b>Travelling</b> najprv uvedie človeka k videu, potom zobrazí samotné video, obsah, ilustračný obrázok a nakoniec ponúkne človeku návrat na výber z krajín. Využívajú ho všetky stránky o navštívených krajinách (aktuálne 5).<br>
+    <b>Assignment</b> má tiež svoje vlastné podmenu so zadaniami, potom zobrazí základné informácie o zadaní (berieme to v zmysle, že sa táto šablóna nefixuje len na tento konkrétny predmet a preto umožňuje šablóna variabilitu aj v zadanej univerzite a podobne). Po tejto "hlavičke" nasleduje samotný text zadania (prípadne dokumentácia). Momentálne ju využíva len jedna podstránka, ale v budúcnosti ešte minimálne dve pribudnú (uf, aspoň dúfam :)).
+</p>
+
+<h2>Premenné</h2>
+<p>
+    Premenných používam veľa - jednak defaultné ohľadom stránky - ale najmä vlastné, ktorých je okolo 20-30. Vďačím za to svojej lenivosti a teda nechuti písať hocčo viackrát, ako je nevyhnutné. Preto niektoré stránky reálne fičia celkom na tom, čo im káže šablóna. Príkladom je napr. šablóna travelling, ktorá toho diktuje veľa:<br>
+    <center><img src="/images/doc/layout_travelling_premenne2x_pluginyoutube.PNG" alt="premenne travelling"></center><br>
+    Sú to pomiešané vlastné s globálne známymi premennými. Ďalším príkladom je šablóna na dobrovoľnícke činnosti, len tu sú použité štyri vlastné:<br>
+    <center><img src="/images/doc/layout_volunt_mapa_premenne.PNG" alt="premenne volunt"></center><br>
+    Asi najviac som sa vyriadila v šablóne ku zadaniam (keďže verím, že ešte ďalšie dve budem odovzdávať), vyrábanie hlavičiek totižto nepatrí k mojim obľúbeným činnostiam. Tu je ich myslím okolo 9:<br>
+    <center><img src="/images/doc/layouts_assingment_premennevlas.PNG" alt="premenne zadania"></center><br>
+    Podobných miest je na stránke viacero, v podstate hockde, kde sa odomňa vyžadovalo na rovnaké miesto pri rôznych stránkach pridať podobný obsah alebo ak som potrebovala v obsahu využiť viac ako dvakrát jeden dlhší názov, spoľahla som sa na premenné.
+</p>
+
+<h2>Filtre a tagy</h2>
+<p>
+    V zásade FOR používam pri každej kolekcii (teda trikrát), pretože je to skvelý spôsob ako zobraziť z jej členov práve to, čo potrebujem (a Aha! ďalšie premenné):<br>
+    <center><img src="/images/doc/volun_stu_kolekcia_premenne_for.PNG" alt="for kolekcia"></center><br>
+    Pri zobrazení kolekcie o cestovaní v časti Travelling tiež používam na náhľad k obsahu filter truncatewords, ktorým zobrazujem ako ochutnávku niekoľko prvých slov popisu výletu:<br>
+    <center><img src="/images/doc/travelling_for_collection_premenne_filtTruncatewords.PNG" alt="for kolekcia truncate"></center>
+</p>
+<p>
+    Iné filtre používam aj v sekcii o RUŠ, vo Volunteering. Ide o hranie sa s textom, ktoré bolo spôsobené najmä zapnutou anglickou klávesnicou a súčastne potrebou, vzhľadom na názov organizácie, používať diakritiku, plus názov má slušných šesť slov, a tak bolo často efektívnejšie používať len premennú, prípadne ju v rýchlosti upraviť.<br>
+    <center><img src="/images/doc/volun_rus_01_premenne_filterRemove_pluginCap_lahsiaDiakritika.PNG" alt="textove filtre"></center>
+</p>
+<p>
+    Ďalším, pre mňa nevyhnutným využitím tejto funkcionality je IF konštrukcia. Využívam ju napríklad, vždy v osobitnej podobe, pri sekciách, kde sa stránky odkazujú na ďalšie podstránky, ako je to napríklad pri sekcii o dobrovoľníctve alebo zadaniach. Keďže v takých prípadoch sa najprv vypíše nadpis sekcie a potom jej podstránky, a všade používam premenné, že sa na to využije automaticky názov aktuálnej stránky, chcela som sa vyvarovať prípadov, kedy by sa vypísal nad aj pod sekundárne meno ten istý nadpis (Ja chcem nad sekundárne menu názov hlavnej sekcie a podeň aktuálnu podstránku). Na to využívam IF-y:<br>
+    <center><img src="/images/doc/layouts_default_if.PNG" alt="if podstranky"></center>
+</p>
+<p>
+    V poslednom rade chcem poukázať na filter, ktorý v podľa mňa najvyhovujúcom formáte informuje v pätičke stránky o poslednej úprave stránky:<br>
+    <center><img src="/images/doc/layouts_default_filtertime.PNG" alt="filter cas"></center>
+</p>
+<p>
+    Tu som uviedla približne desať príkladov na využitie tagov a filtrov na mojej webstránke. V praxi ich je o niečo viac, vybrala som tie, ktoré mi pri implementácie prišli najzaujímavejšie.
+</p>
+
+<h2>Kolekcie</h2>
+<p>
+    Využívam presne tri kolekcie:<br>
+    <center><img src="/images/doc/kolekcie3.PNG" alt="kolekcie"></center><br>
+    <center><b>Trips</b> slúži pre jednotlivé navšívené krajiny v sekcii o cestovaní a dve ďalšie (<b>RUŠ podujatia</b> a <b>STU podujatia</b>) na prezentovanie udalostí, na ktorých som spolupracovala ako dobrovoľník. Pritom používam dve rôzne možné zobrazenia kolekcií - priame alebo presmerovanie na vlastnú podstránku prvku. Takto vypadá podstránka len s náhľadom:<br>
+    <img src="/images/doc/view_collectionSinglePages_overallView.PNG" alt="kolekcie nahlad" height="300px"></center><br>
+    Takto celé vymenovanie (v tomto prípade prelinkované na externé fotogalérie, táto forma je využitá len pri dobrovoľníckych aktivitách):<br>
+    <center><img src="/images/doc/view_collectionLines_rusOverview.PNG" alt="kolekcie" height="400px"></center><br>
+</p>
+
+<h2>Pluginy</h2>
+<p>
+    V rámci webu využívam tri pluginy:
+    <li><a href="http://stackoverflow.com/questions/21315732/capitalize-first-letter-of-each-word-with-liquid-syntax">_capitalize_all</a></li>
+    <li><a href="https://gist.github.com/joelverhagen/1805814">youtube</a></li>
+    <li><a href="https://github.com/muratayusuke/jekyll-numbered-headings">jekyll-numbered-headings</a></li>
+    Každý z nich slúži na iný účel.
+</p>
+<p>
+    <b>_capitalize_all</b> umožňuje použiť filter, ktorý vo výraze zmení všetky začiatočné písmená slov na veľké. Využívam ho práve raz, keď sa snažím vysvetliť jednu z používaných skratie:<br>
+    <center><img src="/images/doc/volun_rus_01_premenne_filterRemove_pluginCap_lahsiaDiakritika.PNG" alt="capitalize_all"></center>
+</p>
+<p>
+    Druhý plugin, umožňujúci prehrávať youtube videá, s príznačným názvom <b>youtube</b>, využívam pri každej zo stránok určených pre krajiny, ktoré som v minulosti navštívila, napr. <a href="/trips_collection/albania">Albánsko</a>.
+</p>
+<p>
+    Posledný plugin, <b>jekyll-numbered-headings</b>, využívam pri zozname a popise vecí, ktoré určite odporúčam navštíviť v <a href="/trips_collection/macedonia">Macedónsku</a>.<br>
+    <center><img src="/images/doc/plugin_travelling_numberedhead.PNG" alt="numbered-headings plugin"></center>
+</p>
+
+<h2>Zdroje</h2>
+<p>
+    Aj keď moje estetické cítenie možno nedosauje úroveň priemernej ženy, myslím, že som dostatočne využila základnú funkcionalitu poskytnutých technológii v podstatne väčšom rozsahu, ako bolo vyžadované.
+</p>
+
+<h2>Zdroje</h2>
+<p>
+    Pluginy:
+    <li><a href="http://stackoverflow.com/questions/21315732/capitalize-first-letter-of-each-word-with-liquid-syntax">_capitalize_all</a></li>
+    <li><a href="https://gist.github.com/joelverhagen/1805814">youtube</a></li>
+    <li><a href="https://github.com/muratayusuke/jekyll-numbered-headings">jekyll-numbered-headings</a></li>
+    Návod na ich použitie je súčasťou ich dokumentácie, okrem _capitalize_all, ktorého použitie je vysvetlené v príspevku na stackoverflow.
+</p>
+<p>
+    Využité tutoriály:
+    <li><a href="https://shopify.github.io/liquid/">Liquid dokumentácia</a></li>
+    <li><a href="http://jekyll.tips/">Jekyll Tips</a></li>
+</p>

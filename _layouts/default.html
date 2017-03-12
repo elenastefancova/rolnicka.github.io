@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>{{ page.title }}</title>
+				<title>{{ site.title }}</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
 		</head>
 		<body>
 			<nav>
 	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	    		</ul>
+						<li><a href="/" style="color: #CCCCCC" >Home</a></li>
+						<li><a href="/cv" style="color: #CCCCCC"} >CV</a></li>
+						<li><a href="/volunteering" style="color: #CCCCCC">Volunteering</a></li>
+						<li><a href="/travelling" style="color: #CCCCCC">Travelling</a></li>
+						<li><a href="/webpublishing" style="color: #CCCCCC">Web publishing</a></li>
+				</ul>
 			</nav>
 			<div class="container">
-			
+
+				{% if page.title == "Rada ubytovaných študentov" or page.title == "Sloboda zvierat"
+					or page.title == "Slovak University of Technology in Bratislava" %}
+					<div align="center"><h1>Volunteering</h1><div>
+				{% elsif page.title == "Assignment 1" or page.title == "Assignment 2"  or page.title == "Assignment 3" %}
+					<div align="center"><h1>Web publishing</h1><div>
+				{% else %}
+					<div align="center"><h1>{{page.title}}</h1><div>
+				{% endif %}
+
 			{{ content }}
 			
 			</div><!-- /.container -->
 			<footer>
-	    		<ul>
-	        		<li><a href="mailto:elenastefancova@gmail.com">email</a></li>
-	        		<li><a href="https://github.com/rolnicka">github.com/rolnicka</a></li>
-				</ul>
+	    		<ul><div style = "color:#CCCCCC; font-size: small">
+					<li><a href="https://github.com/rolnicka" style="color: #CCCCCC">github.com/rolnicka</a></li>
+					<li>Last update at {{ "now" | date: "%d.%m.%Y %H:%M" }}</li>
+	        		<li><a href="mailto:elenastefancova@gmail.com" style="color: #CCCCCC">elenastefancova@gmail.com</a></li>
+				</div></ul>
 			</footer>
 		</body>
 	</html>

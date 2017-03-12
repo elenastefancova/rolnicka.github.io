@@ -1,0 +1,12 @@
+---
+layout: default
+title: Travelling
+---
+
+{% for trip in site.trips_collection %}
+    <p>
+        <a href="{{ trip.url }}" title="{{ trip.title }}" style="font-size: xx-large">{{ trip.title }}</a>
+        {{trip.content | truncatewords: 10}}
+    </p>
+    <br>
+{% endfor %}
