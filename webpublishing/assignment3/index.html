@@ -18,4 +18,49 @@ semester: LS
 
 ---
 
-<p>Sem to pribudne.</p>
+<p>Elementy prezentácie som popísala v XSD. Základ prezentácie tvoria globálne nastavenia a hlavička V globálnych nastaveniach je možné 
+  si zvoliť farbu pozadia, textu, font textu a farbu nadpisov (povinné časti). V hlavičke sú základné údaje, akési metadáta, pre 
+  prezentáciu: meno jej autora, organizácia pod ktorú podlieha, dátum a hlavne nadpis a stručný opis, teda podnadpis (nepovinne). 
+  Každý z týchto prvkov sa môže vyskytnúť maximálne raz.
+</p>
+  
+<p>
+  Tieto údaje sú obsiahnute najmä v hlavnom úvodnom slajde a ďalšie slajdy potom tvorí vždy nadpis a obsah, pričom ani jeden z 
+  elementov nie je povinný, ale môže sa vyskytnúť maximálne raz. Slajd má tri triedy: pravý, ľavý a zhrnutie. Základné zarovnanie 
+  nadpisu je totižto na stred, ale prvými dvoma triedami sa dá prestaviť na jednu alebo druhú stranu. Zhrnutie je zase automatické 
+  vygenerovanie obsahu prezentácie, teda nadpisov a príslušných strán. Do obsahu slajdov sa môžu neobmedzene pridávať obrázky, url 
+  adresy, zoznamy (s vnorenými položkami), zvýrazňovať písmo boldom alebo farbou. 
+</p>
+
+<p>
+  Schéma s príkladom XML sú validné.
+</p>
+
+<p>
+  Súbory XSL mám tri. Jeden spoločný, jeden pre transformáciu do PDF a jeden do jednotlivých xhtml slajdov. Spoločný súbor 
+  obsahuje “funkciu” na zisk porodového čísla obrázku a vygenerovanie jeho jednoduchého popisu. Výstup zvyšných dvoch je v 
+  konečnom dôsledku rovnaký, teda po vizuálnej stránke, po formálnej typu súboru nie. 
+</p>
+
+<p>
+  Prezentácia sa nastaví podľa poskytnutých globálnych nastavení. Do jej spodnej časti sa pridá prehľad o aktuálnom čísle snímku 
+  a celkovom počte (vyrátané automaticky) a v prípade html slajdov aj možnosť ísť ďalej alebo o slajd vzad (tiež automaticky). 
+  Automaticky sa generuje aj spomínaný obsah, pomocou “for-each” a prvkov zoznamu. Obrázku sa pomocou funkcie generuje popis. 
+</p>
+  
+<p>
+  Nie sú síce pokryté úplne všetky možnosti elementov (napr. tabuľky, ktoré ale nie sú ani v ppt prezentáciách), ale to je z dôvodu 
+snahy ukázať čo najoriginálnejšie ukážky. Preto sú zvolené obrázky kombinované s textom, prvky s premennými od používateľa (nadpisy 
+a ich farba, zarovanie nadpisu na slajde) aj kombinované komplexnejšie typy (samotný slajd, zoznamy...).
+</p>
+
+<p>
+  Prvky postačujú na to, aby sa dala vytvoriť dostatočne komplexná prezentácia a to bez nutnosti opakovať rôzne nastavenia, 
+  napríklad font písma či farba pozadia. Pri konverzii do html je formát zapísaný aj do CSS súboru.
+</p>
+
+<p>
+  Priložená prezentácia (xml súbor) demonštruje použitie základných možností a na jej preklad do html bol využitý saxon9he. 
+  Na preklad do pdf bol využitý prístup z predchádzajúceho zadania, jemne prispôsobený k tomuto zadaniu. Najprv vytvoril .fo súbor, 
+  potom pdf a .fo zmaže. 
+</p>
